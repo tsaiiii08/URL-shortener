@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "fun":"node randomCodeGenerator.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "-": "^0.0.1",
+    "body-parser": "^1.20.2",
     "D": "^1.0.0",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
