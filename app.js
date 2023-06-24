@@ -19,7 +19,6 @@ app.get('/',(req,res)=>{
 //縮短網址
 app.post('/URL-shortener',(req,res)=>{
   const original = req.body.URL
-  console.log(original)
   if(! original) return res.redirect('/')
   
   Url.findOne({ original })
@@ -39,7 +38,20 @@ app.post('/URL-shortener',(req,res)=>{
     .catch(error => console.log(error))
 })
 
+//利用短網址連接到原網址畫面
+app.get('/:shortened',(req,res)=>{
+  const shortened = "http://localhost:3000/" + req.params.shortened
+  Url.findOne({ shortened })
+  .lean()
+  .then(data=>{
+    if(data){
+      res.redirect(data.original)
+    } else {
+      res.render('error')
+    }
+  })
 
+})
 
 app.listen(3000,()=>{
   console.log('app is runnung on port 3000')
