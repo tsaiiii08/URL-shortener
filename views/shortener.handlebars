@@ -1,7 +1,11 @@
-<div>
-  <h3>Please use this link!</h3>
-  <div id="shortened">{{shortened}}</div>
-  <button onclick="copy()">Copy</button>
+<div class="d-flex flex-column align-items-center">
+  <div style="margin-bottom:30px; font-size:20px;">請使用以下短網址</div>
+  <div class="d-flex ">
+    <div id="shortened" style="margin-right:20px; font-size:30px;">{{shortened}}</div>
+    <button onclick="copy()" class="border border-info rounded">Copy</button>
+  </div>
+  
+ 
 </div>
 <script>
   const shortened = document.querySelector("#shortened").textContent
