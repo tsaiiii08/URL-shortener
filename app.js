@@ -19,7 +19,12 @@ app.get('/',(req,res)=>{
 //縮短網址
 app.post('/URL-shortener',(req,res)=>{
   const original = req.body.URL
-  if(! original) return res.redirect('/')
+
+  //如果沒輸入網址則不進行以下程式並提醒使用者
+  if(! original.trim()){
+    const isEmpty = true
+    return res.render('index',{isEmpty})
+  } 
   
   Url.findOne({ original })
     .lean()

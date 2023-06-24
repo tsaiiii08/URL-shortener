@@ -3,4 +3,9 @@
     <input type="text" placeholder="link" name="URL">
     <button type="submit">Create</button>
   </form>
+  {{#if isEmpty}}
+  <div class="alert">
+    <h3>請輸入網址!</h3>
+  </div>
+  {{/if}}
 </div>
