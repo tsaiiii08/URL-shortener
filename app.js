@@ -25,7 +25,7 @@ app.post('/URL-shortener',(req,res)=>{
     const isEmpty = true
     return res.render('index',{isEmpty})
   } 
-  
+
   Url.findOne({ original })
     .lean()
     .then(url => {
@@ -36,7 +36,7 @@ app.post('/URL-shortener',(req,res)=>{
         // 若資料庫沒有該網址，則新增短網址
         const shortened = "http://localhost:3000/" + randomCodeGenerator()
         Url.create({ original, shortened })
-          .then((data) => res.render('shortener', { original, shortened}))
+          .then((data) => res.render('shortener', {shortened}))
           .catch(error => console.log(error))
       }
     })

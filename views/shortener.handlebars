@@ -1,6 +1,9 @@
 <div>
   <h3>Please use this link!</h3>
-  {{original}}
-  <p>{{shortened}}</p>
-  <button>Copy</button>
+  <div id="shortened">{{shortened}}</div>
+  <button onclick="copy()">Copy</button>
 </div>
+<script>
+  const shortened = document.querySelector("#shortened").textContent
+   navigator.clipboard.writeText(shortened)
+</script>
