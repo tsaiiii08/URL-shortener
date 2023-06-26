@@ -3,7 +3,6 @@ require('./config/mongoose')
 const Url = require('./models/URL-shortener')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-const randomCodeGenerator = require('./randomCodeGenerator')
 const routes =require('./routes')
 const app = express()
 
