@@ -8,6 +8,8 @@
  
 </div>
 <script>
-  const shortened = document.querySelector("#shortened").textContent
-   navigator.clipboard.writeText(shortened)
+  function copy(){
+    const shortened = document.querySelector("#shortened").textContent
+    navigator.clipboard.writeText(shortened)
+  }
 </script>
