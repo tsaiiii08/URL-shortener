@@ -16,6 +16,9 @@
 ### How to use
 * Enter the following command in the terminal
   * `git clone https://github.com/tsaiiii08/URL-shortener.git`
+* Add .env file and write down your mongoDB link
+  * ` MONGODB_URI =".....your link"`
+* Enter the following command in the terminal  
   * `npm run start`
 * You can start to use it on "http://localhost:3000/" when you see the following messages
   * `app is runnung on port 3000`
